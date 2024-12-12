@@ -1,11 +1,12 @@
-.tableContainer {
-  max-width: 100%;
-  overflow-x: auto;
+.container {
+  border: 1px solid #ccc;
+  width: 100%;
 }
 
 .tableList {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .tableList th,

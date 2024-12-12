@@ -21,7 +21,7 @@ const columns: readonly Column[] = [
 export default function Tickets() {
   return (
     <div>
-      <TableList columns={columns} rows={getTickets()} />
+      <TableList columns={columns} rows={getTickets(10000)} rowHeight={50} maxHeight={500} />
     </div>
   )
 }
