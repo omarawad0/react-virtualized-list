@@ -22,6 +22,7 @@
   text-transform: uppercase;
   font-size: 14px;
   color: #333;
+  padding: 16px;
 }
 
 .tableList tr:nth-child(even) {
