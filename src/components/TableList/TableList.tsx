@@ -1,16 +1,23 @@
 import { useState } from 'react'
 import { Column, Ticket } from '../../types'
 import styles from './tableList.module.css'
-import ColumnHeader from './ColumnHeader'
+import Header from './Header'
 
 interface TableProps {
   columns: readonly Column[]
   rows: Ticket[]
   rowHeight: number
   maxHeight: number
+  extraRowLength?: number
 }
 
-export default function TableList({ columns, rows, rowHeight, maxHeight }: TableProps) {
+export default function TableList({
+  columns,
+  rows,
+  rowHeight,
+  maxHeight,
+  extraRowLength = 1
+}: TableProps) {
   const visibleRowCount = Math.ceil(maxHeight / rowHeight) // Number of rows visible at a time
 
   const [startIndex, setStartIndex] = useState(0) // Index of the first visible row
@@ -22,7 +29,7 @@ export default function TableList({ columns, rows, rowHeight, maxHeight }: Table
     const scrollTop = event.currentTarget.scrollTop
     const currentStartIndex = Math.floor(scrollTop / rowHeight) // Calculate first visible row
     setStartIndex(currentStartIndex)
-    setEndIndex(currentStartIndex + visibleRowCount + 1) // Add one extra row for smooth scrolling
+    setEndIndex(currentStartIndex + visibleRowCount + extraRowLength) // Add one extra row for smooth scrolling
   }
 
   const renderRows = () => {
@@ -38,9 +45,7 @@ export default function TableList({ columns, rows, rowHeight, maxHeight }: Table
   return (
     <div className={styles.container}>
       <div>
-        <table className={styles.tableList}>
-          <ColumnHeader columns={columns} />
-        </table>
+        <Header columns={columns} />
       </div>
       <div
         style={{
