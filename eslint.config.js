@@ -17,8 +17,6 @@ export default tseslint.config(
       ...tseslint.configs.recommended,
       // react
       react.configs.flat.recommended,
-      // import
-      importPlugin.flatConfigs.recommended,
       // prettier
       prettier
     ],
@@ -36,8 +34,7 @@ export default tseslint.config(
       // set of custom rules
       'no-console': 'warn',
       'react/button-has-type': 'error',
-      'react/react-in-jsx-scope': ['off'],
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
+      'react/react-in-jsx-scope': ['off']
     }
   }
 )
