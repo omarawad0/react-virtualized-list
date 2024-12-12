@@ -1,50 +1,91 @@
-# React + TypeScript + Vite
+# React Virtualized List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React application demonstrating a virtualized table implementation. The app uses Vite and TypeScript.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before running the application, ensure you have the following installed:
 
-## Expanding the ESLint configuration
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) (for managing dependencies)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+Follow these steps to set up and run the application locally:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/omarawad0/react-virtualized-list.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Navigate to the Project Directory
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd react-virtualized-list
 ```
+
+### 3. Install Dependencies
+
+Use npm or yarn to install the required dependencies:
+
+```bash
+# Using npm
+npm install
+
+# OR using yarn
+yarn install
+```
+
+### 4. Run the Development Server
+
+Start the Vite development server:
+
+```bash
+# Using npm
+npm run dev
+
+# OR using yarn
+yarn dev
+```
+
+The application will be available at `http://localhost:5173` by default.
+
+### 5. Build for Production
+
+To build the application for production, run:
+
+```bash
+# Using npm
+npm run build
+
+# OR using yarn
+yarn build
+```
+
+The production-ready files will be available in the `dist` directory.
+
+### 6. Preview the Production Build
+
+To preview the production build locally, run:
+
+```bash
+# Using npm
+npm run preview
+
+# OR using yarn
+yarn preview
+```
+
+This will start a local server to preview the build.
+
+## Scripts
+
+Here are the main scripts available in the project:
+
+- `npm run dev` / `yarn dev`: Starts the development server.
+- `npm run build` / `yarn build`: Builds the app for production.
+- `npm run preview` / `yarn preview`: Previews the production build locally.
+- `npm run test` / `yarn test`: Run the tests.
+  
+
